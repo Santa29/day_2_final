@@ -1,0 +1,13 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Message / Post Django Application</h1>
+    <ul>
+
+        {% for book in books_list %}
+            <li>{{book}}</li>
+        {% endfor %}
+
+    </ul>
+{% endblock content %}

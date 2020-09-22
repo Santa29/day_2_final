@@ -1,0 +1,14 @@
+<!--templates/base.html-->
+<html>
+    <head>
+        Django App
+    </head>
+    <body>
+        <a href="{% url 'home' %}">Home</a> | <a href="{% url 'about' %}">About</a> | <a href="{% url 'contacts' %}">Contacts</a>
+        <br>
+
+        {% block content%}
+        {% endblock content%}
+
+    </body>
+</html>
