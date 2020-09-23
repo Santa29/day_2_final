@@ -6,8 +6,23 @@
     <ul>
 
         {% for book in books_list %}
-            <li>{{book}}</li>
+            <div class="post-entry">
+                <h2>
+                    <a href="{% url 'book_detail' book.pk %}">{{book.title}}</a>
+                </h2>
+                <p>
+                    Written by: {{book.author}}
+                </p>
+                <p>
+                    ISBN: {{book.isbn}}
+                </p>
+                <p>
+                    Year: {{book.year}}
+                </p>
+            </div>
         {% endfor %}
 
     </ul>
+
+
 {% endblock content %}

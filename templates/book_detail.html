@@ -1,0 +1,15 @@
+<!--templates/book_detail.html-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class = "post-entry">
+        <h2>Written by: {{book.author}}</h2>
+        <p>Title: {{book.title}}</p>
+        <p>ISBN: {{book.isbn}}</p>
+        <p>Year: {{book.year}}</p>
+    </div>
+
+    <p><a href="{% url 'book_edit' book.pk %}">+ Edit this book</a></p>
+    <p><a href="{% url 'book_delete' book.pk %}">- Delete this book</a></p>
+{% endblock content %}

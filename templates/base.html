@@ -1,13 +1,33 @@
 <!--templates/base.html-->
+{% load static %}
 <html>
     <head>
-        Django App
+        <title>Django Blog App</title>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="\stylesheet">
+        <link rel="stylesheet"href="{% static 'css/base.css' %}" >
     </head>
     <body>
         <a href="{% url 'home' %}">Home</a> | <a href="{% url 'about' %}">About</a> | <a href="{% url 'contacts' %}">Contacts</a>
         <br>
+        <header>
+            <div class='nav-left'>
+                <h1>
+                    <a href="{% url 'home' %}">
+                        Homepage
+                    </a>
+                </h1>
+            </div>
+            <div class = "nav-right">
+                <a href="{% url 'book_new' %}">
+                    + New book
+                </a>
+
+            </div>
+        </header>
+
 
         {% block content%}
+
         {% endblock content%}
 
     </body>
