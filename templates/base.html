@@ -24,11 +24,20 @@
 
             </div>
         </header>
+        {% if user.is_authenticated %}
+            <p>Greetings, {{user.username}}</p>
+            <a href="{% url 'logout' %}">LogOut</a>
+        {% else %}
+            <p>New User?</p>
+            <a href="{% url 'signup' %}">SignUp</a>
+            <p>Already registrated?</p>
+            <a href="{% url 'login' %}">Log in</a>
+        {% endif %}
+        <div>
+            {% block content%}
 
-
-        {% block content%}
-
-        {% endblock content%}
+            {% endblock content%}
+        </div>
 
     </body>
 </html>
